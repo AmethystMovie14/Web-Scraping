@@ -5,7 +5,10 @@ from selenium.webdriver.common.by import By
 
 start_urls = ['https://www.accuweather.com/es/mx/mexico-city/242560/weather-forecast/242560',
               'https://www.accuweather.com/es/mx/guadalajara/243735/weather-forecast/243735',
-              'https://www.accuweather.com/es/mx/monterrey/244681/weather-forecast/244681']
+              'https://www.accuweather.com/es/mx/monterrey/244681/weather-forecast/244681',
+              'https://www.accuweather.com/es/mx/zapopan/243736/weather-forecast/243736',
+              'https://www.accuweather.com/es/mx/tlaquepaque/233270/weather-forecast/233270',
+              'https://www.accuweather.com/es/mx/tonalá/238799/weather-forecast/238799']
 
 def extraer_clima():
     driver = webdriver.Edge()
