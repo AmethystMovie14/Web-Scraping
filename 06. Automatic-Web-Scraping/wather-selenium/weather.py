@@ -1,6 +1,7 @@
 import schedule
 import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 start_urls = ['https://www.accuweather.com/es/mx/mexico-city/242560/weather-forecast/242560',
                     'https://www.accuweather.com/es/mx/guadalajara/243735/weather-forecast/243735',
@@ -9,7 +10,7 @@ start_urls = ['https://www.accuweather.com/es/mx/mexico-city/242560/weather-fore
 
 def extraer_clima():
 
-    driver = webdriver.Chrome('chromedriver.exe')
+    driver = webdriver.Edge()
 
     for url in start_urls:
         driver.get(url)
