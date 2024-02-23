@@ -2,6 +2,7 @@ import schedule
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import datetime
 
 start_urls = ['https://www.accuweather.com/es/mx/mexico-city/242560/weather-forecast/242560',
               'https://www.accuweather.com/es/mx/guadalajara/243735/weather-forecast/243735',
@@ -24,12 +25,14 @@ def extraer_clima():
         real_feal = real_feal.replace('RealFeel®', '').replace('°','').replace('\n','').replace('\t','').replace('\r','').strip()
         current = current.replace('°','').replace('\n','').replace('\t','').replace('\r','').strip()
 
+        current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open("datos-clima.csv", "a") as f:
-            f.write(f"{ciudad},{current},{real_feal}\n")
+            f.write(f"{ciudad},{current},{real_feal},{current_datetime}\n")
 
         print(ciudad)
         print(current)
         print(real_feal)
+        print(current_datetime)
         print("\n")
 
     driver.close()
